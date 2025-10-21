@@ -213,7 +213,7 @@
           <div class="profile-placeholder" aria-hidden="false">
             <!-- If you add a photo, name it `assets/cristal-photo.jpg`. Until then, this area is a styled placeholder. -->
             <img src="assets/cristal-photo.jpg" alt="Cristal T. Ellis — Licensed Associate Counselor" onerror="this.style.display='none';">
-            <div style="padding:25px;text-align:center;color:var(--dark);">
+            <div style="padding:18px;text-align:center;color:var(--dark);">
               <div style="font-weight:700">Cristal T. Ellis, LAC</div>
               <div style="color:var(--muted);font-size:0.95rem">Licensed Associate Counselor — Virtual across Arkansas</div>
             </div>
