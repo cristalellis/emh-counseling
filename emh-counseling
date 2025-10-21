@@ -93,6 +93,36 @@
       nav.main-nav.show{display:flex}
       .hamburger{display:block;margin-left:auto}
     }
+/* --- Mobile About Section Fix --- */
+@media (max-width:880px) {
+  .about-grid {
+    grid-template-columns: 1fr; /* stacks content vertically */
+    gap: 20px;
+  }
+
+  .profile-placeholder {
+    height: auto;         /* allows the image box to shrink naturally */
+    max-width: 320px;     /* keeps it neat on small screens */
+    margin: 0 auto;       /* centers the photo */
+  }
+
+  .profile-placeholder img {
+    width: 100%;
+    height: auto;         /* prevents stretching */
+    border-radius: 12px;  /* keeps rounded corners */
+  }
+
+  .profile-name, 
+  .profile-title {
+    text-align: center;
+  }
+}
+
+@media (max-width:480px) {
+  .profile-placeholder {
+    max-width: 260px; /* smaller for tiny screens */
+  }
+}
 
     /* Hero content */
     .hero-content{max-width:920px;padding:32px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));backdrop-filter: blur(0);}
