@@ -1,480 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>EMH Counseling, LLC — Cristal T. Ellis, LAC</title>
-
-  <!-- Meta -->
-  <meta name="description" content="EMH Counseling — Cristal T. Ellis, LAC. Telehealth counseling across Arkansas for adolescents & adults. Anxiety, depression, grief, trauma, adjustment disorders.">
-
-  <!-- Styles (all-in-one for easy upload) -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EMH Counseling | Cristal T. Ellis, LAC</title>
   <style>
-    :root{
-      --max-w:1100px;
-      --bg:#ffffff;
-      --primary:#5ea7d4; /* light blue */
-      --accent:#f2a07b;  /* warm orange */
-      --dark:#072033;
-      --muted:#6b7b86;
-      --radius:12px;
-      --shadow: 0 8px 30px rgba(3,20,30,0.08);
-      --ease: cubic-bezier(.2,.9,.2,1);
-      --section-gap:60px;
-      --content-pad:28px;
+    :root {
+      --blue: #114355;
+      --light-blue: #a6c8de;
+      --white: #ffffff;
+      --soft-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color:var(--dark);
-      background:var(--bg);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      color: #333;
+      background-color: #f9f9f9;
+      overflow-x: hidden;
     }
 
-    /* Fixed background hero */
-    .hero-wrap{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:white;
-      text-align:center;
-      background-image: linear-gradient(rgba(3,18,30,0.35), rgba(3,18,30,0.35)),
-                        url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1800&q=70');
-      background-size:cover;
-      background-position:center center;
-      background-attachment: fixed; /* OPTION A: fixed background */
-      padding:48px 20px;
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: var(--soft-shadow);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 24px;
+      z-index: 1000;
     }
 
-    /* Header / nav */
-    .site-header{
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
-      z-index:50;
-      display:flex;
-      justify-content:center;
-      background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.55));
-      backdrop-filter: blur(6px);
-      border-bottom:1px solid rgba(7,32,51,0.04);
-      box-shadow: 0 2px 10px rgba(2,10,14,0.02);
-    }
-    .header-inner{
-      max-width:var(--max-w);
-      width:100%;
-      padding:10px 20px;
-      display:flex;
-      align-items:center;
-      gap:18px;
-    }
-    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--dark)}
-    .brand img.logo{height:56px;}
-    .brand .title{font-weight:700;color:var(--dark);letter-spacing:0.2px}
-    nav.main-nav{margin-left:auto;display:flex;gap:14px;align-items:center}
-    nav.main-nav a{
-      text-decoration:none;color:var(--dark);padding:8px 12px;border-radius:8px;font-weight:600;
-    }
-    nav.main-nav a.cta{
-      background:var(--primary);color:white;box-shadow:var(--shadow);
-    }
-    nav.main-nav a:hover{transform:translateY(-1px);transition:all 160ms var(--ease)}
-
-    /* Mobile nav */
-    .hamburger{display:none;border:0;background:none;font-size:22px;padding:8px;cursor:pointer}
-    @media(max-width:880px){
-      nav.main-nav{display:none;position:absolute;right:18px;top:68px;background:white;padding:14px;border-radius:10px;box-shadow:var(--shadow);flex-direction:column}
-      nav.main-nav.show{display:flex}
-      .hamburger{display:block;margin-left:auto}
-    }
-/* --- Mobile About Section Fix --- */
-@media (max-width:880px) {
-  .about-grid {
-    grid-template-columns: 1fr; /* stacks content vertically */
-    gap: 20px;
-  }
-
-  .profile-placeholder {
-    height: auto;         /* allows the image box to shrink naturally */
-    max-width: 320px;     /* keeps it neat on small screens */
-    margin: 0 auto;       /* centers the photo */
-  }
-
-  .profile-placeholder img {
-    width: 100%;
-    height: auto;         /* prevents stretching */
-    border-radius: 12px;  /* keeps rounded corners */
-  }
-
-  .profile-name, 
-  .profile-title {
-    text-align: center;
-  }
-}
-
-@media (max-width:480px) {
-  .profile-placeholder {
-    max-width: 260px; /* smaller for tiny screens */
-  }
-}
-
-    /* Hero content */
-    .hero-content{max-width:920px;padding:32px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));backdrop-filter: blur(0);}
-    .hero h1{font-size:2.2rem;margin:0 0 12px;line-height:1.1}
-    .hero p.lead{font-size:1.05rem;margin:0 0 20px;color:rgba(255,255,255,0.95)}
-    .hero .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-    .btn{display:inline-block;padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:700}
-    .btn.primary{background:var(--primary);color:white;box-shadow:var(--shadow)}
-    .btn.ghost{background:transparent;color:white;border:1px solid rgba(255,255,255,0.18)}
-
-    /* Sections */
-    main{margin-top:82px}
-    section{
-      min-height:calc(100vh - 82px);
-      padding:var(--section-gap) 20px;
-      display:flex;
-      align-items:center;
-    }
-    .container{max-width:var(--max-w);margin:0 auto;width:100%;padding:0 var(--content-pad)}
-
-/* ===== About (simple two-column with square photo) ===== */
-.about-section {
-  padding: 70px 20px;
-  background: linear-gradient(180deg, rgba(173,216,230,0.08), rgba(255,255,255,0.6));
-  border-radius: 12px;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 380px; /* bio left, square photo box on right */
-  gap: 28px;
-  align-items: start;
-}
-
-.about-bio h2 {
-  margin-top: 0;
-  color: #114355;
-  font-size: 1.9rem;
-}
-
-.about-text p {
-  margin-bottom: 14px;
-  line-height: 1.6;
-  color: #333;
-}
-
-/* Profile placeholder: square photo at a fixed size, matching earlier layout */
-.profile-placeholder {
-  width: 100%;
-  max-width: 380px;
-  border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 6px 20px rgba(3,20,30,0.06);
-  overflow: hidden;
-  text-align: center;
-}
-
-/* KEEP the image square and not stretched — this is the key to restoring the old look */
-.profile-img {
-  display: block;
-  width: 100%;
-  height: 380px;        /* square area height = column width (380px) */
-  object-fit: cover;    /* crops to fill while keeping aspect */
-}
-
-/* Name/title below the photo inside the same box */
-.profile-info {
-  padding: 12px 14px;
-  background: #f7fbff;
-}
-
-.profile-name {
-  font-weight: 700;
-  color: #114355;
-}
-
-.profile-title {
-  color: #667083;
-  font-size: 0.95rem;
-  margin-top: 4px;
-}
-
-/* Mobile: stack columns, keep image smaller but square-ish */
-@media (max-width: 880px) {
-  .about-grid {
-    grid-template-columns: 1fr; /* stack vertically on mobile */
-  }
-
-  .profile-placeholder {
-    max-width: 320px;
-    margin: 20px auto 0;
-  }
-
-  .profile-img {
-    height: 320px; /* smaller square on mobile */
-  }
-}
-
-@media (max-width: 480px) {
-  .profile-img {
-    height: 260px;
-  }
-}
-
-
-
-/* Mobile adjustments */
-@media (max-width: 880px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .profile-placeholder {
-    margin-top: 24px;
-  }
-}
-
-    .profile-placeholder img{width:100%;height:100%;object-fit:cover;display:block}
-
-    /* Services / approaches */
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:#fff;padding:18px;border-radius:12px;box-shadow:var(--shadow)}
-    .card h3{margin-top:0;color:var(--dark)}
-
-    /* Rates/Contact */
-    .rates .notice{background:linear-gradient(180deg, rgba(242,160,123,0.06), rgba(94,167,212,0.02));padding:16px;border-radius:10px}
-
-    /* Footer */
-    footer.site-footer{padding:22px 20px;background:#042530;color:#dff3ff;text-align:center}
-    footer a{color:#dff3ff;text-decoration:none;font-weight:600}
-
-    /* Fade-in animation utility */
-    .reveal{opacity:0;transform:translateY(14px);transition:opacity 700ms var(--ease), transform 700ms var(--ease)}
-    .reveal.visible{opacity:1;transform:translateY(0)}
-
-    /* small screens */
-    @media (max-width:900px){
-      .about-grid{grid-template-columns:1fr}
-      .grid-3{grid-template-columns:1fr}
-      section{padding:48px 12px;min-height:auto}
-      .hero h1{font-size:1.6rem}
-      .profile-placeholder{height:240px}
+    header img {
+      height: 50px;
     }
 
-    /* accessibility focus */
-    a:focus{outline:3px solid rgba(94,167,212,0.25);outline-offset:3px}
+    nav a {
+      text-decoration: none;
+      color: var(--blue);
+      margin: 0 14px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f27d42;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: url('assets/blue-mountain-sunrise.jpg') no-repeat center center/cover;
+      height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    }
+
+    .btn {
+      background: #f27d42;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 20px;
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #d86b36;
+    }
+
+    /* ABOUT SECTION */
+    .section {
+      padding: 100px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .about-bio h2 {
+      margin-top: 0;
+      font-size: 2rem;
+      color: var(--blue);
+    }
+
+    .about-text p {
+      margin-bottom: 14px;
+      line-height: 1.7;
+    }
+
+    .profile-placeholder {
+      width: 100%;
+      max-width: 380px;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: var(--soft-shadow);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .profile-img {
+      display: block;
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+    }
+
+    .profile-info {
+      padding: 12px 14px;
+      background: #f7fbff;
+    }
+
+    .profile-name {
+      font-weight: 700;
+      color: var(--blue);
+    }
+
+    .profile-title {
+      color: #667083;
+      font-size: 0.95rem;
+      margin-top: 4px;
+    }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: var(--soft-shadow);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card h3 {
+      color: var(--blue);
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: #114355;
+      color: white;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 880px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-placeholder {
+        max-width: 320px;
+        margin: 24px auto 0;
+      }
+
+      .profile-img {
+        height: 320px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .profile-img {
+        height: 260px;
+      }
+    }
+
+    /* ANIMATION */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
-
 </head>
 <body>
 
-  <!-- header -->
-  <header class="site-header" role="banner">
-    <div class="header-inner">
-      <a class="brand" href="#home" aria-label="EMH Counseling home">
-        <img src="assets/EMH logo.png" alt="EMH Counseling logo" class="logo" />
-        <div class="title" style="font-size:0.95rem">EMH Counseling, LLC</div>
-      </a>
-
-      <!-- desktop nav -->
-      <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#approaches">Approaches</a>
-        <a href="#rates">Rates</a>
-        <a href="#contact" class="cta">Request Appointment</a>
-      </nav>
-
-      <!-- mobile hamburger -->
-      <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
-    </div>
+  <!-- HEADER -->
+  <header>
+    <img src="assets/EMH logo.png" alt="EMH Counseling Logo">
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <!-- Hero (fixed bg) -->
-  <div id="home" class="hero-wrap">
-    <div class="hero-content container reveal">
-      <h1>Providing a safe and compassionate space for healing and growth across Arkansas.</h1>
-      <p class="lead">Virtual counseling for adolescents &amp; adults. Evidence-based approaches with a non-judgmental, person-centered foundation.</p>
-      <div class="btns">
-        <a class="btn primary" href="https://book.carepatron.com/EMH-Counseling--LLC/Cristal?p=cx3tjLxIRUS0-KuVIi4tXQ&s=xZ5vCSDc" target="_blank" rel="noopener">Request Appointment</a>
-        <a class="btn ghost" href="#about">Learn About Cristal</a>
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <h1>Welcome to EMH Counseling</h1>
+    <p>Free of judgment, providing a safe space for processing emotions, understanding, and healing.</p>
+    <a href="https://book.carepatron.com/EMH-Counseling--LLC/Cristal?p=cx3tjLxIRUS0-KuVIi4tXQ&s=xZ5vCSDc" class="btn" target="_blank">Request an Appointment</a>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="about-grid">
+      <div class="about-bio">
+        <h2>About Me</h2>
+        <div class="about-text">
+          <p>
+            Cristal T Ellis is a Licensed Associate Counselor who graduated from Henderson State University in 2023 with a Master of Science in Clinical Mental Health Counseling. She has experience working with adolescents and adults navigating anxiety, depression, grief, and trauma. Her therapeutic approach integrates Cognitive Behavioral Therapy (CBT), Cognitive Processing Therapy (CPT), and person-centered techniques to create a collaborative and supportive environment.
+          </p>
+          <p>
+            As a trauma-trained CPT provider, Cristal is dedicated to helping clients process and heal in a safe, nonjudgmental space. While she currently provides telehealth services only, she strives to ensure each client feels heard, understood, and supported throughout their journey of healing and self-discovery.
+          </p>
+          <p>
+            She also holds a Bachelor’s degree in Applied Behavioral Analysis from Purdue Global (2019) and her work as a neuropsychological technician in a neurological setting has strengthened her understanding of how behavior and brain function connect—an insight that continues to shape her therapeutic practice.
+          </p>
+          <p>
+            During her internship, she gained valuable experience in both private practice and agency settings, further expanding her ability to meet clients’ diverse needs.
+          </p>
+        </div>
+      </div>
+
+      <div class="profile-placeholder">
+        <img src="assets/cristal-photo.jpg" alt="Cristal T. Ellis — Licensed Associate Counselor" class="profile-img">
+        <div class="profile-info">
+          <div class="profile-name">Cristal T. Ellis, LAC</div>
+          <div class="profile-title">Virtual Across Arkansas</div>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <main>
-
-<!-- ===== ABOUT SECTION (REPLACE ENTIRE OLD ABOUT BLOCK WITH THIS) ===== -->
-<section id="about" class="section about-section">
-  <div class="container about-grid">
-    <div class="about-bio">
-      <h2>About Me</h2>
-
-      <div class="about-text">
-        <p>
-          Cristal T Ellis is a Licensed Associate Counselor who graduated from Henderson State University in 2023 with a Master of Science in Clinical Mental Health Counseling. She has experience working with adolescents and adults navigating anxiety, depression, grief, and trauma. Her therapeutic approach integrates Cognitive Behavioral Therapy (CBT), Cognitive Processing Therapy (CPT), and person-centered techniques to create a collaborative and supportive environment.
-        </p>
-
-        <p>
-          As a trauma-trained CPT provider, Cristal is dedicated to helping clients process and heal in a safe, nonjudgmental space. While she currently provides telehealth services only, she strives to ensure each client feels heard, understood, and supported throughout their journey of healing and self-discovery.
-        </p>
-
-        <p>
-          She also holds a Bachelor’s degree in Applied Behavioral Analysis from Purdue Global (2019) and her work as a neuropsychological technician in a neurological setting has strengthened her understanding of how behavior and brain function connect—an insight that continues to shape her therapeutic practice.
-        </p>
-
-        <p>
-          During her internship, she gained valuable experience in both private practice and agency settings, further expanding her ability to meet clients’ diverse needs.
-        </p>
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <h2 style="text-align:center;color:#114355;">Services & Approaches</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Anxiety</h3>
+        <p>Helping clients manage anxious thoughts, develop coping tools, and restore balance in daily life.</p>
+      </div>
+      <div class="service-card">
+        <h3>Depression</h3>
+        <p>Supporting emotional healing and improving self-worth through compassion and structured guidance.</p>
+      </div>
+      <div class="service-card">
+        <h3>Grief</h3>
+        <p>Offering space to process loss, adjust to change, and find meaning after difficult experiences.</p>
+      </div>
+      <div class="service-card">
+        <h3>Adjustment & Life Changes</h3>
+        <p>Assisting with transitions and building resilience to adapt to life’s evolving challenges.</p>
       </div>
     </div>
+  </section>
 
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <h2 style="color:#114355;">Contact</h2>
+    <p>Email: <a href="mailto:cristalellis@emh-counseling.com">cristalellis@emh-counseling.com</a></p>
+    <p>Location: Virtual – Serving Clients Across Arkansas</p>
+    <a href="https://book.carepatron.com/EMH-Counseling--LLC/Cristal?p=cx3tjLxIRUS0-KuVIi4tXQ&s=xZ5vCSDc" class="btn" target="_blank">Book an Appointment</a>
+  </section>
 
-
-          <p><strong>Education:</strong> Henderson State University, M.S., 2023</p>
-        </div>
-
-       
-
-    <!-- Services -->
-    <section id="services" aria-labelledby="servicesTitle">
-      <div class="container">
-        <div class="reveal" id="servicesBlock">
-          <h2 id="servicesTitle">Services</h2>
-          <p class="muted">Individual telehealth counseling tailored to each client's needs.</p>
-          <div class="grid-3" style="margin-top:18px">
-            <div class="card">
-              <h3>Anxiety</h3>
-              <p>Practical tools to calm worry, reduce panic, and improve daily functioning.</p>
-            </div>
-            <div class="card">
-              <h3>Depression</h3>
-              <p>Support to process emotions and build coping skills that restore engagement and hope.</p>
-            </div>
-            <div class="card">
-              <h3>Grief</h3>
-              <p>Gentle, paced support to process loss and honor your unique journey through grief.</p>
-            </div>
-            <div class="card">
-              <h3>Trauma & CPT</h3>
-              <p>Evidence-based processing when appropriate, with emphasis on safety and pacing.</p>
-            </div>
-            <div class="card">
-              <h3>Adjustment Disorders</h3>
-              <p>Guidance through life transitions, loss, stress, and new challenges.</p>
-            </div>
-            <div class="card">
-              <h3>Adolescents & Adults</h3>
-              <p>Experience working across life stages with developmentally informed care.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Approaches -->
-    <section id="approaches" aria-labelledby="approachesTitle">
-      <div class="container reveal" id="approachBlock">
-        <h2 id="approachesTitle">Therapeutic Approaches</h2>
-        <p class="muted">Each approach is selected to best meet the client's needs.</p>
-        <div style="height:18px"></div>
-        <div class="grid-3">
-          <div class="card">
-            <h3>Cognitive Behavioral Therapy (CBT)</h3>
-            <p>Identifies unhelpful thinking patterns and teaches practical skills to change thoughts and behaviors.</p>
-          </div>
-          <div class="card">
-            <h3>Cognitive Processing Therapy (CPT)</h3>
-            <p>An evidence-based method often used for processing traumatic events and shifting beliefs that maintain distress.</p>
-          </div>
-          <div class="card">
-            <h3>Person-Centered</h3>
-            <p>A warm, empathic approach that prioritizes listening, respect, and client-led growth.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Rates -->
-    <section id="rates" aria-labelledby="ratesTitle">
-      <div class="container reveal" id="ratesBlock">
-        <h2 id="ratesTitle">Rates & Payment</h2>
-        <p><strong>Session fee:</strong> $110 per session.</p>
-        <p><strong>Payment:</strong> Private pay (cash pay only at this time).</p>
-        <p><strong>Format:</strong> Telehealth (virtual sessions only) — serving clients across Arkansas.</p>
-
-        <div class="notice" style="margin-top:18px;padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(94,167,212,0.04), rgba(242,160,123,0.02))">
-          <p class="muted">If you have questions about fees or need resources, please email or use the appointment link to schedule a consultation.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" aria-labelledby="contactTitle">
-      <div class="container reveal" id="contactBlock">
-        <h2 id="contactTitle">Contact</h2>
-        <p>If you'd like to schedule, please use the appointment link below or email me. I strive to respond to emails within 48 hours.</p>
-
-        <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:18px">
-          <a class="btn primary" href="https://book.carepatron.com/EMH-Counseling--LLC/Cristal?p=cx3tjLxIRUS0-KuVIi4tXQ&s=xZ5vCSDc" target="_blank" rel="noopener">Request Appointment</a>
-          <div style="padding:12px 16px;border-radius:10px;background:#fff;border:1px solid rgba(4,37,48,0.04);box-shadow:var(--shadow);min-width:220px">
-            <div style="font-weight:700">Email</div>
-            <div style="margin-top:6px"><a href="mailto:cristalellis@emh-counseling.com">cristalellis@emh-counseling.com</a></div>
-            <div style="color:var(--muted);margin-top:8px;font-size:0.95rem">Virtual sessions only — serving clients across Arkansas.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
-      <div>© <span id="yr"></span> EMH Counseling, LLC — It’s OK to Not Be OK</div>
-      <div style="color:#dff3ff;font-weight:600">Licensed Associate Counselor — Cristal T. Ellis</div>
-    </div>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 EMH Counseling | Cristal T. Ellis, LAC | All Rights Reserved</p>
   </footer>
-
-  <!-- Scripts -->
-  <script>
-    // footer year
-    document.getElementById('yr').textContent = new Date().getFullYear();
-
-    // mobile nav toggle
-    const ham = document.getElementById('hamburger');
-    const nav = document.getElementById('mainNav');
-    ham && ham.addEventListener('click', () => nav.classList.toggle('show'));
-
-    // smooth reveal on scroll via IntersectionObserver
-    const reveals = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('visible');
-          // leave visible (no unobserve/unreveal) so it stays visible
-        }
-      });
-    }, {root:null,rootMargin:'0px 0px -8% 0px',threshold:0.12});
-
-    reveals.forEach(r => io.observe(r));
-
-    // Close mobile nav when clicking a link
-    document.querySelectorAll('nav.main-nav a').forEach(a => {
-      a.addEventListener('click', () => {
-        nav.classList.remove('show');
-      });
-    });
-  </script>
 
 </body>
 </html>
+
+
 
 
 
