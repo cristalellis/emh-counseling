@@ -352,19 +352,7 @@
           <p><strong>Education:</strong> Henderson State University, M.S., 2023</p>
         </div>
 
-        <div class="reveal" id="photoBlock">
-          <!-- Replace the placeholder image file with your photo at assets/cristal-photo.jpg -->
-          <div class="profile-placeholder" aria-hidden="false">
-            <!-- If you add a photo, name it `assets/cristal-photo.jpg`. Until then, this area is a styled placeholder. -->
-            <img src="assets/cristal-photo.jpg" alt="Cristal T. Ellis — Licensed Associate Counselor" onerror="this.style.display='none';">
-            <div style="padding:20px;text-align:center;color:var(--dark);">
-              <div style="font-weight:700">Cristal T. Ellis, LAC</div>
-              <div style="color:var(--muted);font-size:0.95rem">Licensed Associate Counselor — Virtual across Arkansas</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+       
 
     <!-- Services -->
     <section id="services" aria-labelledby="servicesTitle">
