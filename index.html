@@ -143,18 +143,26 @@
     }
     .container{max-width:var(--max-w);margin:0 auto;width:100%;padding:0 var(--content-pad)}
 
-  /* ====== About Section Styling ====== */
+/* ====== About Section Styling ====== */
 .about-section {
   background: linear-gradient(180deg, rgba(173, 216, 230, 0.15), rgba(255, 255, 255, 0.6));
   padding: 80px 20px;
   border-radius: 16px;
 }
 
+/* Keep the two-column layout side by side */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px; /* Bio on left, photo on right */
+  gap: 40px;
+  align-items: start;
+}
+
+/* Bio text styling */
 .about-bio h2 {
   font-size: 2em;
   margin-bottom: 20px;
   color: #1b4965;
-  text-align: left;
 }
 
 .about-text p {
@@ -169,20 +177,28 @@
   margin: 14px 0;
 }
 
+/* Profile box styling */
 .profile-placeholder {
   border-radius: 16px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   overflow: hidden;
   background: white;
   text-align: center;
+  transition: transform 0.5s ease;
+}
+
+.profile-placeholder:hover {
+  transform: translateY(-3px);
 }
 
 .profile-placeholder img {
   width: 100%;
-  height: auto;
+  height: 400px;
   object-fit: cover;
+  display: block;
 }
 
+/* Name and title box */
 .profile-info {
   padding: 18px;
   background: #f7faff;
@@ -200,7 +216,7 @@
   color: #555;
 }
 
-/* Smooth fade animation */
+/* Fade animation */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -213,6 +229,19 @@
     transform: translateY(0);
   }
 }
+
+/* Make it stack neatly on mobile */
+@media (max-width: 880px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-placeholder {
+    max-width: 400px;
+    margin: 24px auto 0;
+  }
+}
+
 
 /* Mobile adjustments */
 @media (max-width: 880px) {
@@ -480,6 +509,7 @@
 
 </body>
 </html>
+
 
 
 
