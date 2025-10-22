@@ -296,6 +296,43 @@
     </div>
   </section>
 
+    <!-- Approaches -->
+    <section id="approaches" aria-labelledby="approachesTitle">
+      <div class="container reveal" id="approachBlock">
+        <h2 id="approachesTitle">Therapeutic Approaches</h2>
+        <p class="muted">Each approach is selected to best meet the client's needs.</p>
+        <div style="height:18px"></div>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Cognitive Behavioral Therapy (CBT)</h3>
+            <p>Identifies unhelpful thinking patterns and teaches practical skills to change thoughts and behaviors.</p>
+          </div>
+          <div class="card">
+            <h3>Cognitive Processing Therapy (CPT)</h3>
+            <p>An evidence-based method often used for processing traumatic events and shifting beliefs that maintain distress.</p>
+          </div>
+          <div class="card">
+            <h3>Person-Centered</h3>
+            <p>A warm, empathic approach that prioritizes listening, respect, and client-led growth.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rates -->
+    <section id="rates" aria-labelledby="ratesTitle">
+      <div class="container reveal" id="ratesBlock">
+        <h2 id="ratesTitle">Rates & Payment</h2>
+        <p><strong>Session fee:</strong> $110 per session.</p>
+        <p><strong>Payment:</strong> Private pay (cash pay only at this time).</p>
+        <p><strong>Format:</strong> Telehealth (virtual sessions only) — serving clients across Arkansas.</p>
+
+        <div class="notice" style="margin-top:18px;padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(94,167,212,0.04), rgba(242,160,123,0.02))">
+          <p class="muted">If you have questions about fees or need resources, please email or use the appointment link to schedule a consultation.</p>
+        </div>
+      </div>
+    </section>
+
   <!-- CONTACT -->
   <section id="contact" class="section contact">
     <h2 style="color:#114355;">Contact</h2>
