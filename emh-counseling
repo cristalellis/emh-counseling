@@ -286,6 +286,10 @@
         <p>Supporting emotional healing and improving self-worth through compassion and structured guidance.</p>
       </div>
       <div class="service-card">
+        <h3>Trauma</h3>
+        <p>Providing trauma-informed care through Cognitive Processing Therapy (CPT) to help clients process and heal from distressing experiences safely and effectively.</p>
+      </div>
+      <div class="service-card">
         <h3>Grief</h3>
         <p>Offering space to process loss, adjust to change, and find meaning after difficult experiences.</p>
       </div>
@@ -319,4 +323,5 @@
 
 </body>
 </html>
+
 
